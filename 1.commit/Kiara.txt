@@ -1,0 +1,84 @@
+Preguntas
+
+¿Cómo se inicializa un repositorio local?
+
+git init
+
+Este comando convierte el directorio actual en un repositorio Git vacío (local).
+
+¿Cómo hago para que un directorio deje de ser controlado por Git?
+
+rm -rf .git
+
+Esto elimina el repositorio Git local (la carpeta .git). Todo el historial se pierde, pero los archivos quedan.
+
+Si agrego un archivo a un directorio que ya está siendo controlado por Git, ¿está siendo controlado por Git?
+
+No de forma automática. Git detecta el archivo, pero no lo versiona hasta que se ejecute git add.
+
+¿Qué comando se utiliza para agregar un archivo al repositorio local?
+
+git add <archivo>
+
+¿Cómo determino qué archivos fueron modificados?
+
+git status
+
+¿Qué comando se utiliza para hacer un commit?
+
+git commit -m "mensaje del commit"
+
+¿Qué es un commit?
+Un commit es un "punto de control" en el historial de cambios de un proyecto. Guarda una instantánea de los archivos agregados, junto con un mensaje que describe los cambios.
+
+
+Practicas
+
+3.
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        sandwich.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+7.
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        sandwich.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Hay que agregarlo
+
+9.
+Es un historial de la actividad reciente
+
+10. Variaciones de git log:
+
+10.1. git log --oneline
+
+Explicación: Muestra los commits en una línea, útil para vista rápida.
+
+10.2. git log --stat
+Explicación: Muestra qué archivos se modificaron y cuántas líneas.
+
+11. git diff y git difftool:
+
+11.1. git diff
+Muestra diferencias entre archivos antes de hacer commit.
+
+11.2. git difftool --tool=meld
+Muestra una interfaz visual con las diferencias entre commits.
+
+16. git log --stat
+commit ...
+ sandwich2_feo.txt | 3 ---
+ 1 file changed, 3 deletions(-)
+Explicación: Muestra qué archivos cambiaron y cuántas líneas se eliminaron o agregaron.
+

@@ -1,0 +1,75 @@
+2.branchs/nombre_apellido.txt)
+¿Qué es un branch?
+Un branch o rama es una versión separada del proyecto donde se pueden hacer cambios sin afectar la rama principal (como main o master).
+
+¿Por qué pueden ser útiles los branches?
+Permiten desarrollar nuevas funcionalidades, arreglar bugs o experimentar sin interferir con el código principal. Se pueden fusionar luego.
+
+¿Cómo se crea una branch?
+git branch nombre_rama
+
+¿Cómo se cambia a una branch?
+git checkout nombre_rama
+
+¿Cómo se elimina una branch?
+git branch -d nombre_rama
+
+¿Cómo se crea una branch y se cambia a ella en un solo paso?
+git checkout -b nombre_rama
+
+¿Qué es un merge?
+Es el proceso de combinar los cambios de una rama con otra.
+
+¿Cómo se realiza un merge?
+Cambiás a la rama de destino (por ejemplo, main)
+
+Ejecutás:
+git merge rama_a_unir
+
+¿Qué es un tag?
+Es una etiqueta que marca un punto específico del historial, como una versión estable o un hito.
+
+¿Cómo se crea un tag?
+git tag -a nombre_del_tag -m "Mensaje"
+
+Practicas
+
+6.
+Observarás una línea de commits separada desde main
+ 
+
+
+10.
+Ahora main tiene un commit nuevo y hay dos ramas divergentes (experimento, anana).
+ 
+
+
+13.
+Observarás que la rama anana se unió con un commit de merge.
+ 
+
+
+15.
+Muestra el merge hecho
+ 
+
+
+16-Me aparece el branch anana
+
+
+18-Me muestra el merge que he hecho con experimento.
+ 
+
+19.
+Merge manual
+
+20.
+Los 2
+ 
+
+23.
+Ninguno
+ 
+
+24.
+Ya no hay branch

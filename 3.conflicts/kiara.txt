@@ -1,0 +1,31 @@
+1.
+Un conflicto en Git ocurre cuando dos ramas han modificado la misma parte de un archivo de forma diferente, y Git no puede determinar automáticamente cuál versión conservar. No es necesariamente “malo”; simplemente indica que Git necesita ayuda humana para decidir cómo continuar. Es parte del trabajo colaborativo con control de versiones.
+2.
+No siempre se puede evitar, pero se puede minimizar:
+
+Haciendo pull seguido para mantener tu rama actualizada con los cambios remotos.
+
+Comunicándose con el equipo para evitar trabajar sobre los mismos archivos o secciones al mismo tiempo.
+
+Dividiendo bien las tareas entre ramas.
+
+Practicas
+
+10.
+En ambos casos deberías ver diferencias similares en la misma línea: "lomo" ha sido reemplazado por "pollo" o por "bife".
+
+11.
+Todo limpio
+
+12.
+Funciona
+
+13.
+Conflicto
+
+14/15.
+<<<<<<< HEAD
+bife
+=======
+pollo
+>>>>>>> suprema
