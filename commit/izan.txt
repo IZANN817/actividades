@@ -1,83 +1,70 @@
 Preguntas
-
-¿Cómo se inicializa un repositorio local?
-
+¿Cómo se inicia un repositorio Git local?
 git init
+Este comando transforma el directorio actual en un repositorio Git vacío, permitiéndote comenzar a registrar cambios localmente.
 
-Este comando convierte el directorio actual en un repositorio Git vacío (local).
-
-¿Cómo hago para que un directorio deje de ser controlado por Git?
-
+¿Cómo dejo de seguir un directorio con Git?
 rm -rf .git
+Este comando borra la carpeta .git, que es donde Git guarda toda la información del repositorio. Esto "desvincula" el proyecto de Git, pero los archivos permanecen en el sistema.
 
-Esto elimina el repositorio Git local (la carpeta .git). Todo el historial se pierde, pero los archivos quedan.
+Si creo un archivo dentro de un directorio ya versionado por Git, ¿se empieza a rastrear automáticamente?
+No. Git lo reconoce como un archivo nuevo, pero no lo incluye en el control de versiones hasta que se ejecute git add.
 
-Si agrego un archivo a un directorio que ya está siendo controlado por Git, ¿está siendo controlado por Git?
-
-No de forma automática. Git detecta el archivo, pero no lo versiona hasta que se ejecute git add.
-
-¿Qué comando se utiliza para agregar un archivo al repositorio local?
-
+¿Qué comando se utiliza para incluir un archivo en el área de preparación (staging)?
 git add <archivo>
+Esto indica a Git que deseas incluir ese archivo en el próximo commit.
 
-¿Cómo determino qué archivos fueron modificados?
-
+¿Cómo puedo saber qué archivos han sido modificados?
 git status
+Este comando muestra qué archivos han cambiado, cuáles están en staging, cuáles no y qué archivos no están siendo seguidos.
 
-¿Qué comando se utiliza para hacer un commit?
+¿Qué comando se usa para guardar cambios en el repositorio local?
+git commit -m "mensaje"
+Este comando guarda los archivos que están en staging como un nuevo "punto de guardado" en el historial del proyecto.
 
-git commit -m "mensaje del commit"
+¿Qué significa hacer un commit?
+Un commit es como tomar una fotografía del proyecto en ese momento. Guarda el estado de los archivos que están siendo seguidos y permite regresar a ese punto más adelante si es necesario.
 
-¿Qué es un commit?
-Un commit es un "punto de control" en el historial de cambios de un proyecto. Guarda una instantánea de los archivos agregados, junto con un mensaje que describe los cambios.
+Práctica
+3. Resultado del git status antes de cualquier acción:
+On branch main  
+Your branch is up to date with 'origin/main'.  
 
-
-Practicas
-
-3.
-On branch main
-Your branch is up to date with 'origin/main'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        sandwich.txt
+Untracked files:  
+  (use "git add <file>..." to include in what will be committed)  
+        sandwich.txt  
 
 nothing added to commit but untracked files present (use "git add" to track)
+🔍 Explicación: Git detecta el archivo sandwich.txt, pero no lo está siguiendo aún porque no se ha añadido al staging con git add.
 
-7.
-On branch main
-Your branch is up to date with 'origin/main'.
+7. Resultado luego de crear el archivo pero antes del commit:
+Igual que el punto 3. Todavía no se agregó con git add.
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        sandwich.txt
+9. ¿Qué muestra git log?
+Muestra un registro detallado de los commits realizados, incluyendo autor, fecha y mensaje. Es como una bitácora de todos los cambios importantes.
 
-nothing added to commit but untracked files present (use "git add" to track)
-
-Hay que agregarlo
-
-9.
-Es un historial de la actividad reciente
-
-10. Variaciones de git log:
+10. Variaciones del comando git log:
 
 10.1. git log --oneline
-
-Explicación: Muestra los commits en una línea, útil para vista rápida.
+Muestra los commits de forma compacta, cada uno en una sola línea. Muy útil para tener una vista general rápida del historial.
 
 10.2. git log --stat
-Explicación: Muestra qué archivos se modificaron y cuántas líneas.
+Proporciona detalles sobre qué archivos fueron modificados y cuántas líneas se agregaron o eliminaron en cada commit.
 
-11. git diff y git difftool:
+11. Comandos para comparar cambios:
 
 11.1. git diff
-Muestra diferencias entre archivos antes de hacer commit.
+Compara los archivos modificados con su última versión guardada. Muestra exactamente qué líneas han cambiado antes de hacer un commit.
 
 11.2. git difftool --tool=meld
-Muestra una interfaz visual con las diferencias entre commits.
+Abre una herramienta visual que permite ver fácilmente las diferencias entre versiones. Es útil para detectar conflictos o cambios complejos.
 
-16. git log --stat
-commit ...
+16. Ejemplo de salida de git log --stat:
+commit ...  
+ sandwich2_feo.txt | 3 ---  
+ 1 file changed, 3 deletions(-)
+
+📌 Explicación: Indica que el archivo sandwich2_feo.txt fue modificado, específicamente con 3 líneas eliminadas. log --stat resume los cambios por archivo.
  sandwich2_feo.txt | 3 ---
  1 file changed, 3 deletions(-)
 Explicación: Muestra qué archivos cambiaron y cuántas líneas se eliminaron o agregaron.
