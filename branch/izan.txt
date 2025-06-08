@@ -1,75 +1,69 @@
-2.branchs/nombre_apellido.txt)
-¿Qué es un branch?
-Un branch o rama es una versión separada del proyecto donde se pueden hacer cambios sin afectar la rama principal (como main o master).
+Preguntas
+¿Qué es una rama (branch)?
+Una rama es una línea independiente de trabajo dentro de un proyecto Git. Permite desarrollar nuevas ideas sin modificar directamente la rama principal como main o master.
 
-¿Por qué pueden ser útiles los branches?
-Permiten desarrollar nuevas funcionalidades, arreglar bugs o experimentar sin interferir con el código principal. Se pueden fusionar luego.
+¿Para qué sirven las ramas?
+Son útiles para trabajar en características nuevas, solucionar errores o probar cosas sin afectar la versión estable del código. Luego, los cambios pueden integrarse mediante un merge.
 
-¿Cómo se crea una branch?
-git branch nombre_rama
+¿Cómo se crea una rama?
 
-¿Cómo se cambia a una branch?
-git checkout nombre_rama
+git branch nombre_de_la_rama
 
-¿Cómo se elimina una branch?
-git branch -d nombre_rama
+¿Cómo me cambio a otra rama?
 
-¿Cómo se crea una branch y se cambia a ella en un solo paso?
-git checkout -b nombre_rama
+git checkout nombre_de_la_rama
 
-¿Qué es un merge?
-Es el proceso de combinar los cambios de una rama con otra.
+¿Cómo se elimina una rama?
 
-¿Cómo se realiza un merge?
-Cambiás a la rama de destino (por ejemplo, main)
+git branch -d nombre_de_la_rama
 
-Ejecutás:
-git merge rama_a_unir
+¿Cómo crear y cambiar a una rama en un solo comando?
 
+git checkout -b nombre_de_la_rama
+
+¿Qué significa hacer un merge?
+
+Un merge es unir los cambios de una rama con otra, integrando los desarrollos realizados de forma paralela.
+
+¿Cómo se hace un merge?
+Primero cambiás a la rama en la que querés integrar los cambios, por ejemplo main, y luego corrés:
+git merge nombre_de_la_rama_a_unir
 ¿Qué es un tag?
-Es una etiqueta que marca un punto específico del historial, como una versión estable o un hito.
+Es una referencia que apunta a un commit específico, y se suele usar para marcar versiones importantes del proyecto.
 
 ¿Cómo se crea un tag?
-git tag -a nombre_del_tag -m "Mensaje"
+git tag -a nombre_del_tag -m "Descripción o mensaje"
 
-Practicas
-
+Ejercicios
 6.
-Observarás una línea de commits separada desde main
- 
-
+Al ejecutar git graph, verás una nueva línea de historial que se separa de main, mostrando los commits de la rama experimento.
 
 10.
-Ahora main tiene un commit nuevo y hay dos ramas divergentes (experimento, anana).
- 
-
+Ahora main se ha desviado en múltiples ramas (experimento y anana), cada una con sus propios commits. Git muestra ramas paralelas.
 
 13.
-Observarás que la rama anana se unió con un commit de merge.
- 
-
+Después del merge con anana, aparece un commit especial que une ambas historias.
 
 15.
-Muestra el merge hecho
- 
+git graph refleja que se ha realizado un merge en la rama principal.
 
+16.
+La rama anana aparece como fusionada en main.
 
-16-Me aparece el branch anana
-
-
-18-Me muestra el merge que he hecho con experimento.
- 
+18.
+Se muestra el merge realizado con la rama experimento.
 
 19.
-Merge manual
+Fue necesario resolver un conflicto de manera manual, ya que Git no pudo combinar los cambios automáticamente.
 
 20.
-Los 2
- 
+Las ramas experimento y anana ya están integradas a main.
 
 23.
-Ninguno
- 
+No quedan ramas activas sin fusionar a main.
+
+24.
+Las ramas han sido eliminadas exitosamente, el repositorio quedó limpio.
 
 24.
 Ya no hay branch
