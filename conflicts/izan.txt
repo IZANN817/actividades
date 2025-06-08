@@ -1,31 +1,35 @@
-1.
-Un conflicto en Git ocurre cuando dos ramas han modificado la misma parte de un archivo de forma diferente, y Git no puede determinar automáticamente cuál versión conservar. No es necesariamente “malo”; simplemente indica que Git necesita ayuda humana para decidir cómo continuar. Es parte del trabajo colaborativo con control de versiones.
-2.
-No siempre se puede evitar, pero se puede minimizar:
+Preguntas
+1. ¿Qué es un conflicto en Git? ¿Cuándo ocurre? ¿Es algo negativo?
+Un conflicto surge en Git cuando dos ramas han hecho cambios distintos sobre la misma línea de un archivo y Git no puede decidir por sí solo cuál versión debe conservar. No es algo malo, sino una señal de que necesita intervención del usuario para resolver la diferencia. Es común cuando varias personas colaboran en el mismo proyecto.
 
-Haciendo pull seguido para mantener tu rama actualizada con los cambios remotos.
+2. ¿Es posible evitar conflictos? ¿Cómo?
+Aunque los conflictos no siempre se pueden evitar, sí se pueden reducir con buenas prácticas como:
 
-Comunicándose con el equipo para evitar trabajar sobre los mismos archivos o secciones al mismo tiempo.
+Actualizar frecuentemente tu rama con git pull para incorporar cambios remotos.
 
-Dividiendo bien las tareas entre ramas.
+Coordinar con tu equipo para evitar editar los mismos archivos o secciones al mismo tiempo.
 
-Practicas
+Dividir las tareas en ramas específicas para cada funcionalidad o persona.
 
-10.
-En ambos casos deberías ver diferencias similares en la misma línea: "lomo" ha sido reemplazado por "pollo" o por "bife".
+Práctica
+10. ¿Qué muestra git diff master suprema y git diff master bife?
+Ambos comandos muestran modificaciones similares en la misma línea del archivo milanesa.txt: la palabra "lomo" fue reemplazada por "pollo" en una rama y por "bife" en la otra. La diferencia está en qué palabra se usó como reemplazo.
 
-11.
-Todo limpio
+11. ¿Qué muestra git status después de volver a master?
+El estado del repositorio es limpio. No hay cambios pendientes ni archivos sin seguimiento.
 
-12.
-Funciona
+12. ¿Qué pasó al hacer git merge bife?
+La fusión se completó sin problemas porque no había conflictos en ese punto.
 
-13.
-Conflicto
+13. ¿Qué pasó al hacer git merge suprema?
+Se generó un conflicto porque tanto bife como suprema modificaron la misma línea del archivo milanesa.txt.
 
-14/15.
+14. ¿Qué muestra el archivo milanesa.txt con el conflicto?
+El contenido del archivo tendrá marcadores de conflicto como estos:
+
 <<<<<<< HEAD
 bife
 =======
 pollo
 >>>>>>> suprema
+🔍 Explicación: Git marca las diferencias entre las ramas con estos símbolos. Lo que está entre <<<<<<< HEAD y ======= pertenece a la rama actual (bife), mientras que lo que está después de ======= hasta >>>>>>> suprema viene de la rama que intentás fusionar (suprema). Hay que editar el archivo para dejar solo una versión (o combinar ambas), luego hacer git add y git commit para resolver el conflicto.
